@@ -1,0 +1,9 @@
+numpy
+scipy
+SimpleITK
+scikit-image
+tqdm
+# PyTorch — install the build matching your CUDA version (https://pytorch.org)
+torch
+# Hash-grid INR backend — build from source (needs CUDA):
+#   pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
