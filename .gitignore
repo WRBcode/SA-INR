@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 results/
 checkpoints/
+
+# manuscript — kept private, do not publish
+paper/
