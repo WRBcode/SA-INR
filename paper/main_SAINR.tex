@@ -157,7 +157,8 @@ The final polychromatic forward model with scattering correction is defined as
 \begin{equation}\label{eq:final}
   \hat{p}_s(\vr)=-\ln\!\left(\sum_{i=1}^{N}\eta(E_i)\left[e^{-\hat{p}_i(\vr)}+S_i(\vr)\right]\right),
 \end{equation}
-where $\hat{p}_i(\vr)$ denotes the attenuation-only projection at energy $E_i$ and $N$ is the number of discrete energy bins. \new{Inside the bracketed sum, both terms live in the same normalized detector-intensity domain: $e^{-\hat{p}_i(\vr)}\in(0,1]$ is the transmission fraction at bin $i$, while $S_i(\vr)$ is the per-bin scattered-photon intensity computed by Eqs.~\eqref{eq:scatter_n}--\eqref{eq:scatter_total}, normalized by the source intensity $I_0$ (so that $S_i\geq 0$ is dimensionless and on the same scale as the transmission term). The spectrum $\eta(E_i)$ is normalized to $\sum_i \eta(E_i)=1$, so the bracketed sum is a convex combination across energy bins.} The network is optimized end-to-end by minimizing
+where $\hat{p}_i(\vr)$ denotes the attenuation-only projection at energy $E_i$ and $N$ is the number of discrete energy bins. \new{Here $e^{-\hat{p}_i(\vr)}\in(0,1]$ is the transmission fraction, and $S_i(\vr) \geq 0$ is the per-bin scattered intensity, normalized by the source intensity $I_0$ to be dimensionless and scale-consistent with the transmission term. The spectrum $\eta(E_i)$ is normalized to $\sum_i \eta(E_i)=1$, so the bracketed sum is a convex combination across energy bins.}
+The network is optimized end-to-end by minimizing
 \begin{equation}\label{eq:loss}
   \mathcal{L}=\frac{1}{|\mathcal{R}|}\sum_{\vr\in\mathcal{R}}\left|\hat{p}_s(\vr)-p^*(\vr)\right|+\lambda\mathcal{L}_{\text{EDS}},
 \end{equation}
